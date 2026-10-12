@@ -1,115 +1,346 @@
-# web-programming-2026-template
+# Purrfect Home (онлайн магазин котів)
+**Референс**: [LAPA shop](https://lapa.shop/en/the-lapa-universe/)
+## Опис
+На меті створити функціональний сайт, який слугуватиме маркетплейсом для продажу/покупки котиків.
 
-A reusable Django project with no bundled application, SQLite, and Django's
-standard admin, authentication, sessions, messages, and staticfiles support.
+### Функції для користувачів
+Користувачі матимуть змогу:
+- реєструватись, логінитись
+- переглядати та редагувати свій профіль (для авторизованих користувачів)
+- переглядати каталог
+- переходити на окремі сторінки для отримання повної інформації
+- зберігати котиків у "обране" (для авторизованих користувачів)
+- шукати котів через поле пошуку за ім'ям
+- фільтрувати за породою, ціною, віком, країною тощо
+- сортувати за ціною, датою, віком тощо
+- переглядати профіль заводчика і бачити усіх його/її котів  
 
-## Local setup
+*Оскільки коти - це не просто товар, а живі істоти, то кошик не передбачений.
+Очікується, що покупці зв'язуватимуться з менеджером/заводчиком для уточнення деталей.*
 
-Requires the latest patch release of Python 3.12, 3.13, or 3.14. Run these commands from the project directory containing
-`manage.py`.
+### Функції для заводчиків (продавців):
+*Припускаємо, що заводчики для публікації оголошень зв'язуються з адміністратором та надають йому необхідну інформацію.
+Тобто, самостійно вони не можуть керувати своїми оголошеннями.
+"Заводчики" будуть окремою сутністю для забезпечення відображення повної інформації для користувачів.
+Їхня реєстрація/авторизація не передбачена.*
 
-1. Create and activate a virtual environment:
+### Функції для адміністратора:
+Адміністратор матиме змогу:
+- додавати/редагувати/видаляти оголошення заводчиків через адмін-панель  
+- змінювати статус оголошення
 
-   ```bash
-   python -m venv .venv
-   
-   # for linux/macos
-   source .venv/bin/activate
-   # for Windows:
-   .venv\Scripts\activate
-   ```
+*Припускаємо, що адміністратор підтверджує офіційний статус заводчика, реєструє його в БД і тільки тоді створює оголошення.*
 
-2. Install dependencies:
+## Сторінки сайту
+- Основна (Home) — містить опис сайту, відповіді на поширені питання тощо
+- Коти (каталог) + можливість перейти на сторінку окремого кота
+- Заводчики + можливість переходу на сторінку окремого заводчика
+- Для покупців — інформація, яку покупці повинні знати перед покупкою
+- Для заводчиків — інформація, яку повинні знати заводчики перед розміщенням оголошень
+- Контакти —  способи зв'язку з адміністрацією
+- Профіль — для авторизації, логіну, або переходу на свій профіль для вже авторизованих користувачів
 
-   ```bash
-   python -m pip install -r requirements-dev.txt
-   ```
+## Ендпоінти
 
+- **GET /cats** (отримати весь каталог котів)
 
-3. Apply migrations to create the local SQLite database:
+**Параметри**: (усі необов'язкові)  
 
-   ```bash
-   python manage.py migrate
-   ```
+| Параметри          | Тип     | Опис                                           |
+|--------------------|---------|------------------------------------------------|
+| search             | string  | знайти за ім'ям                                |
+| breedId            | integer | фільтр за породою                              |
+| breederId          | integer | фільтр за заводчиком                           |
+| country            | string  | фільтр за країною                              |
+| minPrice, maxPrice | integer | мінімальна, максимальна ціна (в грн)           |
+| minAge, maxAge     | integer | мінімальний, максимальний вік (у місяцях)      |
+| status             | string  | фільтр за статусом (available, reserved, sold) |
+| sortBy             | string  | сортувати за price, age, createdAt             |
+| page, limit        | integer | пагінація                                      |  
+| order              | string  | asc, desc                                      |
 
-4. Start the development server:
+**Відповідь**:  
+200 (OK):
+```json
+{
+  "items": [
+    {
+      "id": 15,
+      "name": "Murka",
+      "breed": { "id": 3, "name": "Scottish fold" },
+      "age": 8,
+      "price": 12000,
+      "country": "Ukraine",
+      "status": "available",
+      "photoUrl": "https://example.com/cats/15.jpg"
+    }
+  ],
+  "page": 1,
+  "limit": 20,
+  "total": 42
+}
+```
+400 (Bad Request): некоректний запит  
 
-   ```bash
-   python manage.py runserver
-   ```
+- **GET /cats/{id}** (отримати інформацію про конкретного кота)  
 
-## Endpoints
+**Відповідь**:  
+200 (OK):
+```json
+{
+  "id": 15,
+  "name": "Murka",
+  "breed": { "id": 3, "name": "Scottish fold" },
+  "breeder": { "id": 1, "name": "Ivan Petrenko" },
+  "age": 8,
+  "country": "Ukraine",
+  "price": 12000,
+  "description": "...",
+  "status": "available",
+  "photoUrl": "https://example.com/cats/15.jpg",
+  "createdAt": "2025-01-15T10:30:00Z"
+}
+```
+404 (Not Found)
 
-With the server running at `http://127.0.0.1:8000`:
+- **POST /cats** (створити оголошення про кота)  
 
-| URL | Behavior |
-| --- | --- |
-| http://127.0.0.1:8000/ | No application homepage; may show Django's development welcome page while `DEBUG = True` |
-| http://127.0.0.1:8000/admin/ | Django admin, available after applying migrations |
+**Поля Request Body**: (усі, крім опису, обов'язкові)
 
-With `DEBUG = False`, unmatched URLs such as `/` return HTTP 404.
+| Поля        | Тип      | Опис              |
+|-------------|----------|-------------------|
+| name        | string   | ім'я              |
+| sex         | string   | стать             |
+| breedId     | integer  | ID породи         |
+| breederId   | integer  | ID заводчика      |
+| country     | string   | країна            |
+| age         | integer  | вік (у місяцях)   |
+| price       | integer  | ціна (в грн)      |
+| description | string   | опис              |
+| photoUrl    | string   | посилання на фото |
 
-To create an account for admin login, run this after applying migrations:
+**Відповідь**:  
+201 (Created): успішно створено  
+400 (Bad Request): некоректні дані
+```json
+{
+  "message": "Validation error",
+  "errors": [{ "field": "price", "message": "Price is required" }]
+}
+```
+404 (Not Found): такого заводчика не існує
 
-```bash
-python manage.py createsuperuser
+- **PATCH /cats/{id}** (редагувати оголошення про конкретного кота)  
+
+**Request Body**: 
+```json
+{ 
+  "status": "reserved", 
+  "price": 11000
+}
+```
+**Відповідь**:  
+200 (OK): успішно змінено  
+400 (Bad Request): некоректні дані  
+404 (Not Found): кота/заводчика не існує
+
+- **DELETE /cats/{id}** (видалити конкретне оголошення про кота)  
+
+**Відповідь**:  
+204 (No Content): успішно, нічого повертати  
+404 (Not Found): кота не знайдено
+
+- **GET /breeders** (отримати інформацію про усіх заводчиків)  
+
+**Відповідь**:  
+200 (OK):  
+```json
+[
+  {
+    "id": 1, 
+    "name": "Ivan Petrenko", 
+    "country": "Ukraine", 
+    "city": "Kyiv"
+  }
+]
 ```
 
-## Add your first application
+- **GET /breeders/{id}** (отримати інформацію про конкретного заводчика)  
 
-1. Create an app from the directory containing `manage.py` (replace `myapp`
-   with your application name):
-
-   ```bash
-   python manage.py startapp myapp
-   ```
-
-2. Add its generated configuration class, `myapp.apps.MyappConfig`, to
-   `INSTALLED_APPS` in `config/settings.py`.
-3. Define your views and create `myapp/urls.py` with their URL patterns.
-4. Register that URLconf in `config/urls.py` using `path()` and `include()`,
-   choosing a URL prefix for the app and retaining the admin route.
-
-See the official Django 6.1 tutorial for
-[views and URL registration](https://docs.djangoproject.com/en/6.1/intro/tutorial01/)
-and [app registration and models](https://docs.djangoproject.com/en/6.1/intro/tutorial02/).
-
-## Git attributes
-
-Git detects text files automatically and normalizes them to LF. Checkouts use
-LF on Linux and Windows, while `.bat` and `.cmd` files use CRLF. Binary files
-are auto-detected and left unchanged, helping avoid newline-only diffs.
-
-
-## Code style and submission verification
-
-All submissions are required to adhere to PEP-8, Django best practices, and standard HTML/CSS/JS formatting. A deterministic cross-platform utility is provided to help you check and format your code.
-
-### 1. Verification (Check Mode)
-Before submitting, verify that all files adhere to the required standards:
-
-```bash
-python check_submission.py
+**Відповідь**:  
+200 (OK):  
+```json
+{
+  "id": 1,
+  "name": "Ivan Petrenko",
+  "country": "Ukraine",
+  "city": "Kyiv",
+  "phone": "+380501234567",
+  "email": "ivan@example.com",
+  "description": "..."
+}
 ```
+404 (Not Found)
 
-If all checks pass, you are ready to submit! If any checks fail, review the error output or run the auto-formatter below.
+- **POST /breeders** (створити заводчика)
 
-### 2. Auto-Formatting
-To automatically format Python files, fix safe PEP-8 rules, format Django HTML templates, and format CSS/JS static files:
+**Поля Request Body**:
 
-```bash
-python check_submission.py --format
-```
+| Поля        | Тип      | Опис                         |
+|-------------|----------|------------------------------|
+| name        | string   | ім'я (обов'язково)           |
+| country     | string   | країна (обов'язково)         |
+| city        | string   | місто                        |
+| phone       | string   | номер телефону (обов'язково) |
+| email       | string   | ел. пошта (обов'язково)      |
+| description | string   | опис                         |
 
-### 3. PyCharm Integration
-If you use PyCharm:
-- **One-Click Run:** In the top-right toolbar run configurations dropdown, select **"Verify Submission"** or **"Format Project"** and click the green **Play** button.
+**Відповідь**:  
+201 (Created)  
+400 (Bad Request)  
 
-## Development only
+- **PATCH /breeders/{id}** (редагувати інформацію про конкретного заводчика)  
 
-The included settings use `DEBUG = True`, a development secret key, and a local
-SQLite database. The default mailer uses the console backend: email is printed
-to the process's console instead of being delivered.
+**Request Body**: поля з POST /breeders  
+**Відповідь**:  
+200 (OK)  
+400 (Bad Request)  
+404 (Not Found)  
 
-This configuration and Django's development server are not suitable for
-production deployment.
+- **DELETE /breeders/{id}** (видалити заводчика з системи)
+
+**Відповідь**:  
+204 (No Content)    
+404 (Not Found)  
+409 (Conflict): у заводчика ще лишились оголошення
+
+- **POST /auth/register** (зареєструватись)  
+
+**Поля Request Body**:
+
+| Поля     | Тип      | Опис                    |
+|----------|----------|-------------------------|
+| name     | string   | ім'я (обов'язково)      |
+| email    | string   | ел. пошта (обов'язково) |
+| password | string   | пароль (обов'язково)    |
+| phone    | string   | номер телефону          |
+
+**Відповідь**:  
+201 (Created)  
+400 (Bad Request)  
+409 (Conflict): email вже зайнятий
+
+- **POST /auth/login** (увійти)
+
+**Поля Request Body**:
+
+| Поля     | Тип      | Опис      |
+|----------|----------|-----------|
+| email    | string   | ел. пошта |
+| password | string   | пароль    |
+
+**Відповідь**:  
+200 (OK)  
+401 (Unauthorized)
+
+- **GET /users/me** (переглянути свій профіль)
+
+**Відповідь**:  
+200 (OK)  
+401 (Unauthorized)
+
+- **PATCH /users/me** (редагувати свій профіль)
+
+**Поля Request Body**:
+
+| Поля  | Тип      | Опис       |
+|-------|----------|------------|
+| name  | string   | ім'я       |
+| email | string   | ел. адреса |
+
+**Відповідь**:  
+200 (OK)  
+400 (Bad Request)  
+401 (Unauthorized)  
+409 (Conflict)
+
+- **GET /users/me/favourites** (подивитись свої улюблені оголошення)  
+
+**Відповідь**:  
+200 (OK)  
+401 (Unauthorized)
+
+- **POST /users/me/favourites** (зберегти оголошення в обране)  
+
+**Поля Request Body**:
+
+| Поля  | Тип     | Опис                 |
+|-------|---------|----------------------|
+| catId | integer | ID кота (оголошення) |
+
+**Відповідь**:  
+201 (Created)  
+401 (Unauthorized)  
+404 (Not Found)  
+409 (Conflict): оголошення вже в обраному  
+
+- **DELETE /users/me/favourites/{catId}** (видалити оголошення з обраного)
+
+**Відповідь**:  
+204 (No Content)  
+401 (Unauthorized)  
+404 (Not Found)
+
+- **GET /breeds** (отримати усі породи для випадаючого списку для фільтрування)  
+
+**Відповідь**:  
+200 (OK)
+
+- **POST /breeds** (створити породу)  
+
+**Поля Request Body**:
+
+| Поля | Тип    | Опис         |
+|------|--------|--------------|
+| name | string | назва породи |
+
+**Відповідь**:  
+201 (Created)  
+400 (Bad Request): порожня назва  
+409 (Conflict): така порода вже є
+
+- **PATCH /breeds/{id}** (редагувати породу)
+
+**Request Body**:
+
+| Поле | Тип    | Опис           |
+|------|--------|----------------|
+| name | string | назва породи   |
+
+**Відповідь**:  
+200 (OK)  
+400 (Bad Request)  
+404 (Not Found)  
+409 (Conflict): така порода вже є
+
+- **DELETE /breeds/{id}** (видалити породу)  
+
+**Відповідь**:  
+204 (No Content)  
+404 (Not Found)  
+409 (Conflict): є коти цієї породи, видалити не можна  
+
+**P.S. При помилці завжди повертається message з поясненням. 
+У POST (крім /auth/login) та PATCH повертається створений/оновлений об'єкт, /auth/login повертає токен.
+Деякі записи скорочено через обсяг інформації.**  
+
+## Схема БД
+![Схема БД](images/database_scheme.png)
+
+## Можливості для розширення в майбутньому
+- підтримка української мови
+- застосування ШІ, наприклад для рекомендацій
+- можливість залишати відгуки про заводчиків
+
+**P.P.S. В процесі розробки вебсайту можливі розбіжності із планом або додавання нових функцій.  
+У такому випадку README.md буде відповідно оновлено.**
