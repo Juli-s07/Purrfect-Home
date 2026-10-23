@@ -51,7 +51,7 @@
 | search             | string  | знайти за ім'ям                                |
 | breedId            | integer | фільтр за породою                              |
 | breederId          | integer | фільтр за заводчиком                           |
-| country            | string  | фільтр за країною                              |
+| country            | string  | фільтр за країною заводчика                    |
 | minPrice, maxPrice | integer | мінімальна, максимальна ціна (в грн)           |
 | minAge, maxAge     | integer | мінімальний, максимальний вік (у місяцях)      |
 | status             | string  | фільтр за статусом (available, reserved, sold) |
@@ -67,8 +67,9 @@
     {
       "id": 15,
       "name": "Murka",
+      "sex": "female",
       "breed": { "id": 3, "name": "Scottish fold" },
-      "age": 8,
+      "birthDate": "2026-02-10",
       "price": 12000,
       "country": "Ukraine",
       "status": "available",
@@ -90,9 +91,10 @@
 {
   "id": 15,
   "name": "Murka",
+  "sex": "female",
   "breed": { "id": 3, "name": "Scottish fold" },
   "breeder": { "id": 1, "name": "Ivan Petrenko" },
-  "age": 8,
+  "birthDate": "2026-02-10",
   "country": "Ukraine",
   "price": 12000,
   "description": "...",
@@ -107,17 +109,16 @@
 
 **Поля Request Body**: (усі, крім опису, обов'язкові)
 
-| Поля        | Тип      | Опис              |
-|-------------|----------|-------------------|
-| name        | string   | ім'я              |
-| sex         | string   | стать             |
-| breedId     | integer  | ID породи         |
-| breederId   | integer  | ID заводчика      |
-| country     | string   | країна            |
-| age         | integer  | вік (у місяцях)   |
-| price       | integer  | ціна (в грн)      |
-| description | string   | опис              |
-| photoUrl    | string   | посилання на фото |
+| Поля        | Тип     | Опис                 |
+|-------------|---------|----------------------|
+| name        | string  | ім'я                 |
+| sex         | string  | стать (male, female) |
+| breedId     | integer | ID породи            |
+| breederId   | integer | ID заводчика         |
+| birthDate   | string  | дата_народження      |
+| price       | integer | ціна (в грн)         |
+| description | string  | опис                 |
+| photoUrl    | string  | посилання на фото    |
 
 **Відповідь**:  
 201 (Created): успішно створено  
@@ -335,7 +336,8 @@
 Деякі записи скорочено через обсяг інформації.**  
 
 ## Схема БД
-![Схема БД](images/database_scheme.png)
+
+![Схема БД](images/database-scheme.png)
 
 ## Можливості для розширення в майбутньому
 - підтримка української мови
