@@ -1,0 +1,3655 @@
+{
+  "info": {
+    "_postman_id": "85a4bdf3-6dab-4470-a91d-e7976d8680f8",
+    "name": "Purrfect API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59192839",
+    "_collection_link": "https://go.postman.co/collection/59192839-85a4bdf3-6dab-4470-a91d-e7976d8680f8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Cats",
+      "item": [
+        {
+          "name": "створити кота породи 1 заводчика 2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Murka",
+                  "type": "text"
+                },
+                {
+                  "key": "sex",
+                  "value": "female",
+                  "type": "text"
+                },
+                {
+                  "key": "breed_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "breeder_id",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "birth_date",
+                  "value": "2026-03-26",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "15000",
+                  "type": "text"
+                },
+                {
+                  "key": "photo_url",
+                  "value": "https://tica.org/wp-content/uploads/2018/08/Scottish-Straight-Full-Body.jpg.webp",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/cats/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити кота породи 1 заводчика 2",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Murka",
+                      "type": "text"
+                    },
+                    {
+                      "key": "sex",
+                      "value": "female",
+                      "type": "text"
+                    },
+                    {
+                      "key": "breed_id",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "breeder_id",
+                      "value": "2",
+                      "type": "text"
+                    },
+                    {
+                      "key": "birth_date",
+                      "value": "2026-03-26",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price",
+                      "value": "15000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "photo_url",
+                      "value": "https://tica.org/wp-content/uploads/2018/08/Scottish-Straight-Full-Body.jpg.webp",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/cats/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 26 Oct 2026 10:38:17 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "365"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 3,\n  \"name\": \"Murka\",\n  \"sex\": \"female\",\n  \"breed\": {\n    \"id\": 1,\n    \"name\": \"Scottish straight\"\n  },\n  \"breeder\": {\n    \"id\": 2,\n    \"name\": \"Murkotik\",\n    \"country\": \"Ukraine\",\n    \"city\": \"\"\n  },\n  \"birth_date\": \"2026-03-26\",\n  \"price\": 15000,\n  \"description\": \"\",\n  \"status\": \"available\",\n  \"photo_url\": \"https://tica.org/wp-content/uploads/2018/08/Scottish-Straight-Full-Body.jpg.webp\",\n  \"created_at\": \"2026-10-26T10:38:17.149002Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "створити кота породи 1 заводчика 2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Mira",
+                  "type": "text"
+                },
+                {
+                  "key": "sex",
+                  "value": "female",
+                  "type": "text"
+                },
+                {
+                  "key": "breed_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "breeder_id",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "birth_date",
+                  "value": "2025-12-02",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "18000",
+                  "type": "text"
+                },
+                {
+                  "key": "photo_url",
+                  "value": "https://dinoanimals.com/wp-content/uploads/2025/05/Scottish-Straight-Cat.jpg",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "This is a description",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/cats/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити кота породи 1 заводчика 2",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Mira",
+                      "type": "text"
+                    },
+                    {
+                      "key": "sex",
+                      "value": "female",
+                      "type": "text"
+                    },
+                    {
+                      "key": "breed_id",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "breeder_id",
+                      "value": "2",
+                      "type": "text"
+                    },
+                    {
+                      "key": "birth_date",
+                      "value": "2025-12-02",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price",
+                      "value": "18000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "photo_url",
+                      "value": "https://dinoanimals.com/wp-content/uploads/2025/05/Scottish-Straight-Cat.jpg",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "This is a description",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/cats/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 26 Oct 2026 10:39:11 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "381"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 4,\n  \"name\": \"Mira\",\n  \"sex\": \"female\",\n  \"breed\": {\n    \"id\": 1,\n    \"name\": \"Scottish straight\"\n  },\n  \"breeder\": {\n    \"id\": 2,\n    \"name\": \"Murkotik\",\n    \"country\": \"Ukraine\",\n    \"city\": \"\"\n  },\n  \"birth_date\": \"2025-12-02\",\n  \"price\": 18000,\n  \"description\": \"This is a description\",\n  \"status\": \"available\",\n  \"photo_url\": \"https://dinoanimals.com/wp-content/uploads/2025/05/Scottish-Straight-Cat.jpg\",\n  \"created_at\": \"2026-10-26T10:39:11.974536Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "створити з неіснуючою породою",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Alex",
+                  "type": "text"
+                },
+                {
+                  "key": "sex",
+                  "value": "male",
+                  "type": "text"
+                },
+                {
+                  "key": "breed_id",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "breeder_id",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "birth_date",
+                  "value": "2026-07-13",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "17000",
+                  "type": "text"
+                },
+                {
+                  "key": "photo_url",
+                  "value": "https://dinoanimals.com/animals/scottish-straight-cat/",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/cats/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити з неіснуючою породою",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Alex",
+                      "type": "text"
+                    },
+                    {
+                      "key": "sex",
+                      "value": "male",
+                      "type": "text"
+                    },
+                    {
+                      "key": "breed_id",
+                      "value": "10",
+                      "type": "text"
+                    },
+                    {
+                      "key": "breeder_id",
+                      "value": "2",
+                      "type": "text"
+                    },
+                    {
+                      "key": "birth_date",
+                      "value": "2026-07-13",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price",
+                      "value": "17000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "photo_url",
+                      "value": "https://dinoanimals.com/animals/scottish-straight-cat/",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/cats/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 19:53:16 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "99"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Validation error\",\n  \"errors\": {\n    \"breed_id\": [\n      \"Invalid pk \\\"10\\\" - object does not exist.\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати все",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати все",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 26 Oct 2026 10:40:24 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "462"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": 4,\n      \"name\": \"Mira\",\n      \"sex\": \"female\",\n      \"breed\": {\n        \"id\": 1,\n        \"name\": \"Scottish straight\"\n      },\n      \"price\": 18000,\n      \"status\": \"available\",\n      \"photo_url\": \"https://dinoanimals.com/wp-content/uploads/2025/05/Scottish-Straight-Cat.jpg\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"Murka\",\n      \"sex\": \"female\",\n      \"breed\": {\n        \"id\": 1,\n        \"name\": \"Scottish straight\"\n      },\n      \"price\": 15000,\n      \"status\": \"available\",\n      \"photo_url\": \"https://tica.org/wp-content/uploads/2018/08/Scottish-Straight-Full-Body.jpg.webp\"\n    }\n  ],\n  \"page\": 1,\n  \"limit\": 10,\n  \"total\": 2\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати за айді",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats/2/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати за айді",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats/2/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "2",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 26 Oct 2026 10:40:53 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "45"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Cat matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати за неіснуючим айді",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats/5/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "5",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати за неіснуючим айді",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats/5/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "5",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 20:02:14 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "45"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Cat matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "змінити за неіснуючим айді",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Sunshine",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/cats/5/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "5",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "змінити за неіснуючим айді",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Sunshine",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/cats/5/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "5",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 20:04:48 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "45"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Cat matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "змінити на неіснуючого заводчика",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "breeder_id",
+                  "value": "10",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/cats/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "змінити на неіснуючого заводчика",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "breeder_id",
+                      "value": "10",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/cats/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 20:06:12 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "101"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Validation error\",\n  \"errors\": {\n    \"breeder_id\": [\n      \"Invalid pk \\\"10\\\" - object does not exist.\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати за параметрами",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats?breed_id=1&min_price=15000",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats"
+              ],
+              "query": [
+                {
+                  "key": "breed_id",
+                  "value": "1"
+                },
+                {
+                  "key": "min_price",
+                  "value": "15000"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати за параметрами",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats?breed_id=1&min_price=15000",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats"
+                  ],
+                  "query": [
+                    {
+                      "key": "breed_id",
+                      "value": "1"
+                    },
+                    {
+                      "key": "min_price",
+                      "value": "15000"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 23:15:57 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "436"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": 2,\n      \"name\": \"Mira\",\n      \"sex\": \"female\",\n      \"breed\": {\n        \"id\": 1,\n        \"name\": \"Scottish straight\"\n      },\n      \"price\": 18000,\n      \"status\": \"available\",\n      \"photo_url\": \"https://scottishfold-cattery.com/en/stati/a-razve-est-shotlandskie-pryamouxie-koshki.html\"\n    },\n    {\n      \"id\": 1,\n      \"name\": \"Murka\",\n      \"sex\": \"female\",\n      \"breed\": {\n        \"id\": 1,\n        \"name\": \"Scottish straight\"\n      },\n      \"price\": 15000,\n      \"status\": \"available\",\n      \"photo_url\": \"https://tica.org/breed/scottish-straight/\"\n    }\n  ],\n  \"page\": 1,\n  \"limit\": 10,\n  \"total\": 2\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати за параметром",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats?search=mira",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "mira"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати за параметром",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats?search=mira",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "mira"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 23:17:38 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "262"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": 2,\n      \"name\": \"Mira\",\n      \"sex\": \"female\",\n      \"breed\": {\n        \"id\": 1,\n        \"name\": \"Scottish straight\"\n      },\n      \"price\": 18000,\n      \"status\": \"available\",\n      \"photo_url\": \"https://scottishfold-cattery.com/en/stati/a-razve-est-shotlandskie-pryamouxie-koshki.html\"\n    }\n  ],\n  \"page\": 1,\n  \"limit\": 10,\n  \"total\": 1\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати за параметрами",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats?sort_by=price&order=desc",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats"
+              ],
+              "query": [
+                {
+                  "key": "sort_by",
+                  "value": "price"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати за параметрами",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats?sort_by=price&order=desc",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort_by",
+                      "value": "price"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 23:19:00 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "436"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": 2,\n      \"name\": \"Mira\",\n      \"sex\": \"female\",\n      \"breed\": {\n        \"id\": 1,\n        \"name\": \"Scottish straight\"\n      },\n      \"price\": 18000,\n      \"status\": \"available\",\n      \"photo_url\": \"https://scottishfold-cattery.com/en/stati/a-razve-est-shotlandskie-pryamouxie-koshki.html\"\n    },\n    {\n      \"id\": 1,\n      \"name\": \"Murka\",\n      \"sex\": \"female\",\n      \"breed\": {\n        \"id\": 1,\n        \"name\": \"Scottish straight\"\n      },\n      \"price\": 15000,\n      \"status\": \"available\",\n      \"photo_url\": \"https://tica.org/breed/scottish-straight/\"\n    }\n  ],\n  \"page\": 1,\n  \"limit\": 10,\n  \"total\": 2\n}"
+            }
+          ]
+        },
+        {
+          "name": "видалити за неіснуючим айді",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats/14/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "14",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити за неіснуючим айді",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats/14/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "14",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 23:20:04 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "45"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Cat matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "видалити за айді",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats/2/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити за айді",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats/2/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "2",
+                    ""
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 23:21:13 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "0"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Breeders",
+      "item": [
+        {
+          "name": "створити з усіма полями",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Julia Sakharova",
+                  "type": "text"
+                },
+                {
+                  "key": "country",
+                  "value": "Ukraine",
+                  "type": "text"
+                },
+                {
+                  "key": "city",
+                  "value": "Kyiv",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "+380973761724",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "y.sakharova@ukma.edu.ua",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "This is a description",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeders/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити з усіма полями",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Julia Sakharova",
+                      "type": "text"
+                    },
+                    {
+                      "key": "country",
+                      "value": "Ukraine",
+                      "type": "text"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kyiv",
+                      "type": "text"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "+380973761724",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "y.sakharova@ukma.edu.ua",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "This is a description",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeders/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:43 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "163"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"name\": \"Julia Sakharova\",\n  \"country\": \"Ukraine\",\n  \"city\": \"Kyiv\",\n  \"phone\": \"+380973761724\",\n  \"email\": \"y.sakharova@ukma.edu.ua\",\n  \"description\": \"This is a description\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "створити з деякими полями",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Murkotik",
+                  "type": "text"
+                },
+                {
+                  "key": "country",
+                  "value": "Ukraine",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "0948839011",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "murkotik@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeders/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити з деякими полями",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Murkotik",
+                      "type": "text"
+                    },
+                    {
+                      "key": "country",
+                      "value": "Ukraine",
+                      "type": "text"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "0948839011",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "murkotik@gmail.com",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeders/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:47 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "123"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 2,\n  \"name\": \"Murkotik\",\n  \"country\": \"Ukraine\",\n  \"city\": \"\",\n  \"phone\": \"0948839011\",\n  \"email\": \"murkotik@gmail.com\",\n  \"description\": \"\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "створити з зайнятим email",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Ivan Petrovich",
+                  "type": "text"
+                },
+                {
+                  "key": "country",
+                  "value": "Ukraine",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "0847384928",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "murkotik@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeders/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити з зайнятим email",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Ivan Petrovich",
+                      "type": "text"
+                    },
+                    {
+                      "key": "country",
+                      "value": "Ukraine",
+                      "type": "text"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "0847384928",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "murkotik@gmail.com",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeders/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:50 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "52"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Breeder with this email already exists\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "створити без обов'язкового поля",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "MurrMeow",
+                  "type": "text"
+                },
+                {
+                  "key": "country",
+                  "value": "US",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "meow@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeders/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити без обов'язкового поля",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "MurrMeow",
+                      "type": "text"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "meow@gmail.com",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeders/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:55 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "77"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Validation error\",\n  \"errors\": {\n    \"phone\": [\n      \"This field is required.\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "змінити email на зайнятий",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "0948930211",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "murkotik@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeders/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "змінити email на зайнятий",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "phone",
+                      "value": "0948930211",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "murkotik@gmail.com",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeders/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:56:09 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "52"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Breeder with this email already exists\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати все",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeders/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати все",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeders/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:56:16 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "126"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Julia Sakharova\",\n    \"country\": \"Ukraine\",\n    \"city\": \"Kyiv\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Murkotik\",\n    \"country\": \"Ukraine\",\n    \"city\": \"\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "отримати за айді",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeders/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати за айді",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeders/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:56:22 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "160"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"name\": \"Julia Sakharova\",\n  \"country\": \"Ukraine\",\n  \"city\": \"Kyiv\",\n  \"phone\": \"0948930211\",\n  \"email\": \"y.sakharova@ukma.edu.ua\",\n  \"description\": \"This is a description\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати за неіснуючим айді",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeders/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                "3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати за неіснуючим айді",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeders/3",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    "3"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:51:55 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "49"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Breeder matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "видалити за айді",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeders/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити за айді",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeders/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:57:42 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "0"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "видалити за неіснуючим айді",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cats/4/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити за неіснуючим айді",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/cats/4/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "4",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:58:13 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "45"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Cat matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "видалити з прив'язаними котами",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeders/2/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeders",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити з прив'язаними котами",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeders/2/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeders",
+                    "2",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 23:38:06 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "75"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"detail\": \"Cannot delete breeder: there are cats attached to this breeder\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Breeds",
+      "item": [
+        {
+          "name": "створити з назвою",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Scottish fold",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeds/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити з назвою",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Scottish fold",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeds/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:32:55 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "31"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"name\": \"Scottish fold\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "створити з назвою",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Ragdoll",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeds/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити з назвою",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Ragdoll",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeds/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:32:59 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "25"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 2,\n  \"name\": \"Ragdoll\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "змінити назву",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Scottish straight",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeds/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "змінити назву",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Scottish straight",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeds/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:04 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "PATCH, DELETE, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "35"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"name\": \"Scottish straight\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "змінити назву на існуючу",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Ragdoll",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeds/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "змінити назву на існуючу",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Ragdoll",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeds/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:10 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "PATCH, DELETE, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "49"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Breed with this name already exists\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати все",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати все",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeds/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:15 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "63"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Scottish straight\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Ragdoll\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "видалити за айді",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds/2/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити за айді",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeds/2/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    "2",
+                    ""
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:25 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "PATCH, DELETE, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "0"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "створити з існуючою назвою",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Scottish straight",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeds/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити з існуючою назвою",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Scottish straight",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeds/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:33:34 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "49"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Breed with this name already exists\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "створити без назви",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "створити без назви",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeds/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:35:12 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "76"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Validation error\",\n  \"errors\": {\n    \"name\": [\n      \"This field is required.\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "змінити за неіснуючим айді",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Oriental",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/breeds/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "змінити за неіснуючим айді",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Oriental",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/breeds/3/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    "3",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:46:50 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "PATCH, DELETE, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "47"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Breed matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "видалити за неіснуючим айді",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити за неіснуючим айді",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeds/3/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    "3",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 18:48:34 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "PATCH, DELETE, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "47"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No Breed matches the given query.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "видалити з прив'язаними котами",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "breeds",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "видалити з прив'язаними котами",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/breeds/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "breeds",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Sun, 25 Oct 2026 23:33:42 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept, Cookie, origin"
+                },
+                {
+                  "key": "allow",
+                  "value": "PATCH, DELETE, OPTIONS"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-length",
+                  "value": "72"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "cross-origin-opener-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Cannot delete breed: there are cats attached to this breed\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    }
+  ]
+}
