@@ -1,4 +1,6 @@
-  .postman/
+.postman/
+postman/collections
+postman/globals
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
