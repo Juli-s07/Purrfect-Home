@@ -53,6 +53,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+REST_FRAMEWORK = {
+    "EXCEPTION_HANDLER": "purrfect.exceptions.custom_exception_handler",
+}
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5500",
+]
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
