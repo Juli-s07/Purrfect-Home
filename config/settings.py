@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "purrfect",
+    "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -49,6 +53,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+REST_FRAMEWORK = {
+    "EXCEPTION_HANDLER": "purrfect.exceptions.custom_exception_handler",
+}
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5500",
+]
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [

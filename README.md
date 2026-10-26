@@ -11,7 +11,7 @@
 - переходити на окремі сторінки для отримання повної інформації
 - зберігати котиків у "обране" (для авторизованих користувачів)
 - шукати котів через поле пошуку за ім'ям
-- фільтрувати за породою, ціною, віком, країною тощо
+- фільтрувати за породою, ціною, країною тощо
 - сортувати за ціною, датою, віком тощо
 - переглядати профіль заводчика і бачити усіх його/її котів  
 
@@ -46,18 +46,17 @@
 
 **Параметри**: (усі необов'язкові)  
 
-| Параметри          | Тип     | Опис                                           |
-|--------------------|---------|------------------------------------------------|
-| search             | string  | знайти за ім'ям                                |
-| breedId            | integer | фільтр за породою                              |
-| breederId          | integer | фільтр за заводчиком                           |
-| country            | string  | фільтр за країною                              |
-| minPrice, maxPrice | integer | мінімальна, максимальна ціна (в грн)           |
-| minAge, maxAge     | integer | мінімальний, максимальний вік (у місяцях)      |
-| status             | string  | фільтр за статусом (available, reserved, sold) |
-| sortBy             | string  | сортувати за price, age, createdAt             |
-| page, limit        | integer | пагінація                                      |  
-| order              | string  | asc, desc                                      |
+| Параметри            | Тип     | Опис                                           |
+|----------------------|---------|------------------------------------------------|
+| search               | string  | знайти за ім'ям                                |
+| breed_id             | integer | фільтр за породою                              |
+| breeder_id           | integer | фільтр за заводчиком                           |
+| country              | string  | фільтр за країною заводчика                    |
+| min_price, max_price | integer | мінімальна, максимальна ціна (в грн)           |
+| status               | string  | фільтр за статусом (available, reserved, sold) |
+| sort_by              | string  | сортувати за price, created_at     [Purrfect API.postman_collection.json](../../Downloads/Purrfect%20API.postman_collection.json)[Purrfect API.postman_collection.json](../../Downloads/Purrfect%20API.postman_collection.json)            |
+| page, limit          | integer | пагінація                                      |  
+| order                | string  | asc, desc                                      |
 
 **Відповідь**:  
 200 (OK):
@@ -67,12 +66,11 @@
     {
       "id": 15,
       "name": "Murka",
+      "sex": "female",
       "breed": { "id": 3, "name": "Scottish fold" },
-      "age": 8,
       "price": 12000,
-      "country": "Ukraine",
       "status": "available",
-      "photoUrl": "https://example.com/cats/15.jpg"
+      "photo_url": "https://example.com/cats/15.jpg"
     }
   ],
   "page": 1,
@@ -90,15 +88,15 @@
 {
   "id": 15,
   "name": "Murka",
+  "sex": "female",
   "breed": { "id": 3, "name": "Scottish fold" },
   "breeder": { "id": 1, "name": "Ivan Petrenko" },
-  "age": 8,
-  "country": "Ukraine",
+  "birth_date": "2026-02-10",
   "price": 12000,
   "description": "...",
   "status": "available",
-  "photoUrl": "https://example.com/cats/15.jpg",
-  "createdAt": "2025-01-15T10:30:00Z"
+  "photo_url": "https://example.com/cats/15.jpg",
+  "created_at": "2025-01-15T10:30:00Z"
 }
 ```
 404 (Not Found)
@@ -107,28 +105,25 @@
 
 **Поля Request Body**: (усі, крім опису, обов'язкові)
 
-| Поля        | Тип      | Опис              |
-|-------------|----------|-------------------|
-| name        | string   | ім'я              |
-| sex         | string   | стать             |
-| breedId     | integer  | ID породи         |
-| breederId   | integer  | ID заводчика      |
-| country     | string   | країна            |
-| age         | integer  | вік (у місяцях)   |
-| price       | integer  | ціна (в грн)      |
-| description | string   | опис              |
-| photoUrl    | string   | посилання на фото |
+| Поля        | Тип     | Опис                 |
+|-------------|---------|----------------------|
+| name        | string  | ім'я                 |
+| sex         | string  | стать (male, female) |
+| breed_id    | integer | ID породи            |
+| breeder_id  | integer | ID заводчика         |
+| birth_date  | string  | дата_народження      |
+| price       | integer | ціна (в грн)         |
+| description | string  | опис                 |
+| photo_url   | string  | посилання на фото    |
 
 **Відповідь**:  
 201 (Created): успішно створено  
-400 (Bad Request): некоректні дані
+400 (Bad Request): некоректні дані або такого заводчика/породи не існує
 ```json
 {
-  "message": "Validation error",
-  "errors": [{ "field": "price", "message": "Price is required" }]
+   "price": ["This field is required."]
 }
 ```
-404 (Not Found): такого заводчика не існує
 
 - **PATCH /cats/{id}** (редагувати оголошення про конкретного кота)  
 
@@ -141,8 +136,8 @@
 ```
 **Відповідь**:  
 200 (OK): успішно змінено  
-400 (Bad Request): некоректні дані  
-404 (Not Found): кота/заводчика не існує
+404 (Not Found): такого кота не знайдено  
+400 (Bad Request): некоректні дані, заводчика/породи не існує 
 
 - **DELETE /cats/{id}** (видалити конкретне оголошення про кота)  
 
@@ -186,18 +181,19 @@
 
 **Поля Request Body**:
 
-| Поля        | Тип      | Опис                         |
-|-------------|----------|------------------------------|
-| name        | string   | ім'я (обов'язково)           |
-| country     | string   | країна (обов'язково)         |
-| city        | string   | місто                        |
-| phone       | string   | номер телефону (обов'язково) |
-| email       | string   | ел. пошта (обов'язково)      |
-| description | string   | опис                         |
+| Поля        | Тип      | Опис                                    |
+|-------------|----------|-----------------------------------------|
+| name        | string   | ім'я / назва розпліднику  (обов'язково) |
+| country     | string   | країна (обов'язково)                    |
+| city        | string   | місто                                   |
+| phone       | string   | номер телефону (обов'язково)            |
+| email       | string   | ел. пошта (обов'язково)                 |
+| description | string   | опис                                    |
 
 **Відповідь**:  
 201 (Created)  
 400 (Bad Request)  
+409 (Conflict): такий email вже зайнятий
 
 - **PATCH /breeders/{id}** (редагувати інформацію про конкретного заводчика)  
 
@@ -206,6 +202,7 @@
 200 (OK)  
 400 (Bad Request)  
 404 (Not Found)  
+409 (Conflict): такий email вже зайнято
 
 - **DELETE /breeders/{id}** (видалити заводчика з системи)
 
@@ -274,9 +271,9 @@
 
 **Поля Request Body**:
 
-| Поля  | Тип     | Опис                 |
-|-------|---------|----------------------|
-| catId | integer | ID кота (оголошення) |
+| Поля   | Тип     | Опис                 |
+|--------|---------|----------------------|
+| cat_id | integer | ID кота (оголошення) |
 
 **Відповідь**:  
 201 (Created)  
@@ -284,7 +281,7 @@
 404 (Not Found)  
 409 (Conflict): оголошення вже в обраному  
 
-- **DELETE /users/me/favourites/{catId}** (видалити оголошення з обраного)
+- **DELETE /users/me/favourites/{cat_id}** (видалити оголошення з обраного)
 
 **Відповідь**:  
 204 (No Content)  
@@ -330,17 +327,67 @@
 404 (Not Found)  
 409 (Conflict): є коти цієї породи, видалити не можна  
 
-**P.S. При помилці завжди повертається message з поясненням. 
+**P.S. При помилках повертається такий об'єкт:
+```json
+{ "message": "Cannot delete breeder: 3 cats are listed by this breeder." }
+```
+або ще з полями помилок
+```json
+{ "message": "Validation error", "errors": { "price": ["This field is required."] } }
+```
 У POST (крім /auth/login) та PATCH повертається створений/оновлений об'єкт, /auth/login повертає токен.
 Деякі записи скорочено через обсяг інформації.**  
 
 ## Схема БД
-![Схема БД](images/database_scheme.png)
+
+![Схема БД](images/database-scheme.png)
 
 ## Можливості для розширення в майбутньому
 - підтримка української мови
 - застосування ШІ, наприклад для рекомендацій
 - можливість залишати відгуки про заводчиків
+
+## Як запустити проєкт
+### На бекенді:
+1. Створити та активувати віртуальне середовище
+```bash
+python -m venv .venv
+
+# for linux/macos
+source .venv/bin/activate
+# for Windows:
+.venv\Scripts\activate
+```
+
+2. Встановити залежності  
+```bash
+pip install -r requirements.txt
+```
+
+3. Запустити міграції, щоб створити БД
+```bash
+python manage.py migrate
+```
+
+4. Запустити сервер  
+```bash
+python manage.py runserver
+```
+
+Базова адреса API: `http://127.0.0.1:8000/api` (не передбачена для роботи)  
+До неї треба дописати ендпоїнт:  
+- http://127.0.0.1:8000/api/cats
+- http://127.0.0.1:8000/api/breeders
+- http://127.0.0.1:8000/api/breeds
+
+### На фронтенді:  
+1. Запустити через окремий термінал (одночасно з бекендом)  
+```bash
+python -m http.server 5500
+```
+
+Сайт буде доступним за адресою http://localhost:5500
+
 
 **P.P.S. В процесі розробки вебсайту можливі розбіжності із планом або додавання нових функцій.  
 У такому випадку README.md буде відповідно оновлено.**
