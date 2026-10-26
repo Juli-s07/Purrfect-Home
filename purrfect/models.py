@@ -5,7 +5,7 @@ class Breeder(models.Model):
     country = models.CharField(max_length=150)
     city = models.CharField(max_length=150, blank=True)
     phone = models.CharField(max_length=20)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
@@ -34,7 +34,7 @@ class Cat(models.Model):
     birth_date = models.DateField()
     price = models.PositiveIntegerField()
     description = models.TextField(blank=True)
-    photo_url = models.URLField(blank=True)
+    photo_url = models.URLField()
     status = models.CharField(max_length=10, choices=Status.choices, default=Status.AVAILABLE)
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
