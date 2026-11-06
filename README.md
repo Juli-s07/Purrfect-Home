@@ -54,7 +54,7 @@
 | country              | string  | фільтр за країною заводчика                    |
 | min_price, max_price | integer | мінімальна, максимальна ціна (в грн)           |
 | status               | string  | фільтр за статусом (available, reserved, sold) |
-| sort_by              | string  | сортувати за price, created_at     [Purrfect API.postman_collection.json](../../Downloads/Purrfect%20API.postman_collection.json)[Purrfect API.postman_collection.json](../../Downloads/Purrfect%20API.postman_collection.json)            |
+| sort_by              | string  | сортувати за price, created_at                 |
 | page, limit          | integer | пагінація                                      |  
 | order                | string  | asc, desc                                      |
 

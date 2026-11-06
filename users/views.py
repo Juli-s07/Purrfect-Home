@@ -2,6 +2,9 @@ from django.contrib.auth.models import User
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.exceptions import TokenError
+from rest_framework_simplejwt.tokens import RefreshToken
+
 from .serializers import UserSerializer
 
 class RegisterView(APIView):
@@ -19,3 +22,12 @@ class MeView(APIView):
     def get(self, request):
         return Response({"username": request.user.username},)
 
+class LogoutView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        try:
+            RefreshToken(request.data.get("refresh")).blacklist()
+        except TokenError:
+            return Response({"detail": ["Invalid token"]},)
+        return Response(status=205)
