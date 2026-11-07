@@ -3644,12 +3644,1552 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "зареєструватись",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "JuliJunami",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "julia@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "SrbsrQ3wee",
+                  "type": "text"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "SrbsrQ3wee",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/register/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "username",
+                      "value": "JuliJunami",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "julia@gmail.com",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "SrbsrQ3wee",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "SrbsrQ3wee",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/register/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Nov 2026 19:36:12 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "82"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"username\": \"JuliJunami\",\n  \"first_name\": \"\",\n  \"last_name\": \"\",\n  \"email\": \"julia@gmail.com\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "зареєструватись із зайнятою поштою",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "Jumi",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "IhbASDV7",
+                  "type": "text"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "IhbASDV7",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "julia@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/register/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "зареєструватись із зайнятою поштою",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "username",
+                      "value": "Jumi",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "IhbASDV7",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "IhbASDV7",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "julia@gmail.com",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/register/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 18:52:49 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "48"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"email\": [\n    \"This email has already been taken.\"\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "зареєструватись із ненадійним паролем",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "Jumi",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "11111111",
+                  "type": "text"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "11111111",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "post@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/register/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "зареєструватись із ненадійним паролем",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "username",
+                      "value": "Jumi",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "11111111",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "11111111",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "post@gmail.com",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/register/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 18:55:32 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "122"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Validation error\",\n  \"errors\": {\n    \"password\": [\n      \"This password is too common.\",\n      \"This password is entirely numeric.\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "зареєструватись без обов'язкового поля",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "password",
+                  "value": "JSDVF87a",
+                  "type": "text"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "JSDVF87a",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "pan@ukma.edu.ua",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/register/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "зареєструватись без обов'язкового поля",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "password",
+                      "value": "JSDVF87a",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "JSDVF87a",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "pan@ukma.edu.ua",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/register/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 18:58:52 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "80"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Validation error\",\n  \"errors\": {\n    \"username\": [\n      \"This field is required.\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "залогінитись з неправильним паролем",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "JuliJunami",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "Buay",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/login/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "залогінитись з неправильним паролем",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "username",
+                      "value": "JuliJunami",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "Buay",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/login/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login",
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 19:03:38 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"api\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "64"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"No active account found with the given credentials\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "залогінитись",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "JuliJunami",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "SrbsrQ3wee",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/login/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "залогінитись",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "username",
+                      "value": "JuliJunami",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "SrbsrQ3wee",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/login/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Nov 2026 19:54:38 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "489"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5MzkwODQ3OCwiaWF0IjoxNzkzODIyMDc4LCJqdGkiOiJmYmQwMzZkODA5M2E0YzEwYTBiYTU3ODBmM2JiMzcwZiIsInVzZXJfaWQiOiIyIn0.5FYzmR-ll29ZQI3QV0BD_8TeOGeAprJ5PucN0WJGAik\",\n  \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzODIyMzc4LCJpYXQiOjE3OTM4MjIwNzgsImp0aSI6IjQ5YzI3MjVhZjBjNTRjZTNhZmRmZjk5ZDMzZWU1NjkzIiwidXNlcl9pZCI6IjIifQ._V09YL-WrG5LtNUeVCLbRlI5jkbxgD29SJGCUmbl-9w\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "залогінитись без обов'язкового поля",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "JuliJunami",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/login/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "залогінитись без обов'язкового поля",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "username",
+                      "value": "JuliJunami",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/login/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 19:02:16 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "80"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Validation error\",\n  \"errors\": {\n    \"password\": [\n      \"This field is required.\"\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "отримати новий access",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "refresh",
+                  "value": "{{json_web_token_16tc}}\n",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/login/refresh/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                "refresh",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати новий access",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "refresh",
+                      "value": "{{json_web_token_16tc}}\n",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/login/refresh/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login",
+                    "refresh",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Nov 2026 20:14:16 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "244"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzODIzNTU2LCJpYXQiOjE3OTM4MjMyNTYsImp0aSI6IjA3MTQ0Y2Y3ZjMxZjQ4N2JiZTA4ZWViNmM4ZDNhNzlhIiwidXNlcl9pZCI6IjIifQ.qXIT5cyEscG_JFJaycyWzgwwto5mvaN5DOmz4FSpoJQ\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "переглянути свій профіль (тест)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0tsq}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url0}}/auth/users/me/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "users",
+                "me",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "переглянути свій профіль (тест)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url0}}/auth/users/me/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "users",
+                    "me",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 19:16:18 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "126"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"username\": \"JuliJunami\",\n  \"first_name\": \"\",\n  \"last_name\": \"\",\n  \"email\": \"julia@gmail.com\",\n  \"date_joined\": \"2026-11-04T19:36:11.052619Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url0}}/auth/logout/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "logout",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url0}}/auth/logout/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "logout",
+                    ""
+                  ]
+                }
+              },
+              "status": "Reset Content",
+              "code": 205,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Nov 2026 21:31:48 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "отримати access після logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "refresh",
+                  "value": "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzODI4MTgyLCJpYXQiOjE3OTM4Mjc4ODIsImp0aSI6IjcyY2NlYWE3MzNlZTQ4NTdhOTVjMjU0YjgzYWMzMTMwIiwidXNlcl9pZCI6IjIifQ.lbW6QmLnanDBc_yrDAxyoiWjEgHouqoEOkyee49zXEA",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/login/refresh/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                "refresh",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "отримати access після logout",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "refresh",
+                      "value": "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzODI4MTgyLCJpYXQiOjE3OTM4Mjc4ODIsImp0aSI6IjcyY2NlYWE3MzNlZTQ4NTdhOTVjMjU0YjgzYWMzMTMwIiwidXNlcl9pZCI6IjIifQ.lbW6QmLnanDBc_yrDAxyoiWjEgHouqoEOkyee49zXEA",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/login/refresh/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login",
+                    "refresh",
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Nov 2026 21:34:52 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"api\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Token is invalid\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "переглянути профіль коли access прострочений",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0vuj}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{base_url0}}/auth/users/me/",
+              "host": [
+                "{{base_url0}}"
+              ],
+              "path": [
+                "auth",
+                "users",
+                "me",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "переглянути профіль коли access прострочений",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
+                "url": {
+                  "raw": "{{base_url0}}/auth/users/me/",
+                  "host": [
+                    "{{base_url0}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "users",
+                    "me",
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 19:22:46 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"api\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "54"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Given token not valid for any token type\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "змінити кота користувачем",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0k1l}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Candy",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/cats/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cats",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "змінити кота користувачем",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Candy",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/cats/1/",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cats",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Sat, 07 Nov 2026 19:35:06 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.12.10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, origin"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "58"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Only administrator can add, edit and delete.\"\n}"
+            }
+          ]
+        }
+      ]
     }
   ],
   "variable": [
     {
       "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "base_url0",
       "value": ""
+    },
+    {
+      "key": "json_web_token_16tc",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0bnz",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0fyy",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0pm3",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0tsq",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0vuj",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0k1l",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_04r3",
+      "secret": true
     }
   ]
 }

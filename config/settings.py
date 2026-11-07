@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "purrfect",
+    "users",
     "rest_framework",
+    "rest_framework_simplejwt",
     "corsheaders",
+    "rest_framework_simplejwt.token_blacklist",
 ]
 
 MIDDLEWARE = [
@@ -55,6 +58,9 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "purrfect.exceptions.custom_exception_handler",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
 }
 
 CORS_ALLOWED_ORIGINS = [
