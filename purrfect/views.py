@@ -11,11 +11,15 @@ from .models import Cat, Breed, Breeder
 from .serializers import CatSerializer, CatShortSerializer, BreedSerializer, BreederSerializer, BreederShortSerializer, \
     CatQuerySerializer
 
+from .permissions import IsAdminOrReadOnly
+
 
 def is_duplicate(errors, field):
     return any(error.code == "unique" for error in errors.get(field, []))
 
 class CatListView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
+
     def get(self, request):
         query = CatQuerySerializer(data=request.query_params)
         query.is_valid(raise_exception=True)
@@ -61,6 +65,8 @@ class CatListView(APIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class CatDetailView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
+
     def get(self, request, pk):
         cat = get_object_or_404(Cat, pk=pk)
         serializer = CatSerializer(cat)
