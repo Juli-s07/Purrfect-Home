@@ -20,7 +20,14 @@ class RegisterView(APIView):
 class MeView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def get(self, request):
-        return Response({"username": request.user.username},)
+        u = request.user
+        return Response({
+            "username": u.username,
+            "first_name": u.first_name,
+            "last_name": u.last_name,
+            "email": u.email,
+            "date_joined": u.date_joined,
+        })
 
 class LogoutView(APIView):
     permission_classes = [permissions.IsAuthenticated]

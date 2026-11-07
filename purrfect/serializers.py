@@ -21,8 +21,6 @@ class CatQuerySerializer(serializers.Serializer):
     country = serializers.CharField(required=False)
     min_price = serializers.IntegerField(required=False, min_value=0)
     max_price = serializers.IntegerField(required=False, min_value=0)
-    min_age = serializers.IntegerField(required=False, min_value=0)
-    max_age = serializers.IntegerField(required=False, min_value=0)
     status = serializers.ChoiceField(choices=["available", "reserved", "sold"], required=False)
     sort_by = serializers.ChoiceField(choices=["price", "age", "created_at"], default="created_at")
     order = serializers.ChoiceField(choices=["asc", "desc"], default="desc")
