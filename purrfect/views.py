@@ -8,10 +8,12 @@ from rest_framework.views import APIView
 
 from .exceptions import ConflictError
 from .models import Cat, Breed, Breeder
-from .serializers import CatSerializer, CatShortSerializer, BreedSerializer, BreederSerializer, BreederShortSerializer, \
+from .serializers import CatSerializer, CatShortSerializer, CatListResponseSerializer, BreedSerializer, BreederSerializer, BreederShortSerializer, \
     CatQuerySerializer
 
 from .permissions import IsAdminOrReadOnly
+
+from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiExample
 
 
 def is_duplicate(errors, field):
@@ -20,6 +22,16 @@ def is_duplicate(errors, field):
 class CatListView(APIView):
     permission_classes = [IsAdminOrReadOnly]
 
+    @extend_schema(
+        tags=["Cats"],
+        summary="Get a list of cats",
+        description="Public endpoint. Return cats with filtering, sorting, pagination.",
+        parameters=[CatQuerySerializer],
+        responses={
+            200: CatListResponseSerializer,
+            400: OpenApiResponse(description="Invalid data"),
+        },
+    )
     def get(self, request):
         query = CatQuerySerializer(data=request.query_params)
         query.is_valid(raise_exception=True)
@@ -58,20 +70,70 @@ class CatListView(APIView):
             "total": total,
         })
 
+    @extend_schema(
+        tags=["Cats"],
+        summary="Create a cat",
+        description="Admin only",
+        responses={
+            201: CatSerializer,
+            400: OpenApiResponse(description="Invalid data"),
+            401: OpenApiResponse(description="Not authenticated"),
+            403: OpenApiResponse(description="Permission denied"),
+        },
+        request = CatSerializer,
+        examples=[
+            OpenApiExample(
+                "New cat",
+                value={
+                    "name": "Barsik",
+                    "sex": "male",
+                    "breed_id": 1,
+                    "breeder_id": 1,
+                    "birth_date": "2024-03-10",
+                    "price": 200,
+                    "photo_url": "https://example.com/barsik.jpg",
+                },
+                request_only=True,
+            ),
+        ],
+    )
     def post(self, request):
         serializer = CatSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+
 class CatDetailView(APIView):
     permission_classes = [IsAdminOrReadOnly]
 
+    @extend_schema(
+        tags=["Cats"],
+        summary="Get details for a cat",
+        description="Public endpoint. Returns a cat by id.",
+        responses={
+            200: CatSerializer,
+            404: OpenApiResponse(description="Cat is not found"),
+        },
+    )
     def get(self, request, pk):
         cat = get_object_or_404(Cat, pk=pk)
         serializer = CatSerializer(cat)
         return Response(serializer.data)
 
+    @extend_schema(
+        tags=["Cats"],
+        summary="Update a cat",
+        description="Partial update. Admin only.",
+        request = CatSerializer,
+        responses={
+            200: CatSerializer,
+            400: OpenApiResponse(description="Invalid data"),
+            401: OpenApiResponse(description="Not authenticated"),
+            403: OpenApiResponse(description="Permission denied"),
+            404: OpenApiResponse(description="Cat is not found"),
+        },
+    )
     def patch(self, request, pk):
         cat = get_object_or_404(Cat, pk=pk)
         serializer = CatSerializer(cat, data=request.data, partial=True)
@@ -79,6 +141,17 @@ class CatDetailView(APIView):
         serializer.save()
         return Response(serializer.data)
 
+    @extend_schema(
+        tags=["Cats"],
+        summary="Delete a cat",
+        description="Complete deletion. Admin only.",
+        responses={
+            204: OpenApiResponse(description="Deleted"),
+            401: OpenApiResponse(description="Not authenticated"),
+            403: OpenApiResponse(description="Permission denied"),
+            404: OpenApiResponse(description="Cat is not found"),
+        },
+    )
     def delete(self, request, pk):
         cat = get_object_or_404(Cat, pk=pk)
         cat.delete()

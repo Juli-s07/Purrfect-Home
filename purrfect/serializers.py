@@ -59,6 +59,12 @@ class CatShortSerializer(serializers.ModelSerializer):
         model = Cat
         fields = ["id", "name", "sex", "breed", "price", "status", "photo_url"]
 
+class CatListResponseSerializer(serializers.Serializer):
+    items = CatShortSerializer(many=True)
+    page = serializers.IntegerField()
+    limit = serializers.IntegerField()
+    total = serializers.IntegerField()
+
 class BreederSerializer(serializers.ModelSerializer):
     cats = CatShortSerializer(many=True, read_only=True)
     class Meta:
