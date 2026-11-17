@@ -15,6 +15,8 @@ from .permissions import IsAdminOrReadOnly
 
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiExample
 
+import logging
+logger = logging.getLogger(__name__)
 
 def is_duplicate(errors, field):
     return any(error.code == "unique" for error in errors.get(field, []))
@@ -63,6 +65,14 @@ class CatListView(APIView):
         offset = (p["page"] - 1) * p["limit"]
         page_items = cats[offset:offset + p["limit"]]
 
+        logger.debug(
+            "List of cats: filters=%s, page=%s, limit=%s, total=%s",
+            sorted(k for k in p if k not in ("page", "limit", "sort_by", "order")),
+            p["page"],
+            p["limit"],
+            total,
+        )
+
         return Response({
             "items": CatShortSerializer(page_items, many=True).data,
             "page": p["page"],
@@ -100,7 +110,10 @@ class CatListView(APIView):
     def post(self, request):
         serializer = CatSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        cat = serializer.save()
+        logger.info("Cat has been created: cat_id=%s, user_id=%s",
+                    cat.id,
+                    request.user.id)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -138,7 +151,12 @@ class CatDetailView(APIView):
         cat = get_object_or_404(Cat, pk=pk)
         serializer = CatSerializer(cat, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        cat = serializer.save()
+        logger.info("Cat has been updated: cat_id=%s, user_id=%s, fields=%s",
+                    cat.id,
+                    request.user.id,
+                    sorted(request.data.keys())
+                    )
         return Response(serializer.data)
 
     @extend_schema(
@@ -155,10 +173,14 @@ class CatDetailView(APIView):
     def delete(self, request, pk):
         cat = get_object_or_404(Cat, pk=pk)
         cat.delete()
+        logger.info("Cat has been deleted: cat_id=%s, user_id=%s",
+                    pk,
+                    request.user.id)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class BreederListView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
     def get(self, request):
         breeders = Breeder.objects.all()
         serializer = BreederShortSerializer(breeders, many=True)
@@ -170,10 +192,15 @@ class BreederListView(APIView):
             if is_duplicate(serializer.errors, "email"):
                 raise ConflictError("Breeder with this email already exists")
             raise ValidationError(serializer.errors)
-        serializer.save()
+        breeder = serializer.save()
+        logger.info("Breeder has been created: breeder_id=%s, user_id=%s",
+                    breeder.id,
+                    request.user.id)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class BreederDetailView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
+
     def get(self, request, pk):
         breeder = get_object_or_404(Breeder, pk=pk)
         serializer = BreederSerializer(breeder)
@@ -187,6 +214,11 @@ class BreederDetailView(APIView):
                 raise ConflictError("Breeder with this email already exists")
             raise ValidationError(serializer.errors)
         serializer.save()
+        logger.info("Breeder has been updated: breeder_id=%s, user_id=%s, fields=%s",
+                    breeder.id,
+                    request.user.id,
+                    sorted(request.data.keys())
+                    )
         return Response(serializer.data)
 
     def delete(self, request, pk):
@@ -194,14 +226,24 @@ class BreederDetailView(APIView):
         try:
             breeder.delete()
         except ProtectedError:
+            logger.warning("Breeder couldn't be deleted: breeder_id=%s, user_id=%s",
+                           pk,
+                           request.user.id,
+                           )
             return Response(
                 {"detail": "Cannot delete breeder: there are cats attached to this breeder",
                     }, status=status.HTTP_409_CONFLICT
             )
+        logger.info("Breeder has been deleted: breeder_id=%s, user_id=%s",
+                    pk,
+                    request.user.id,
+                    )
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class BreedListView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
+
     def get(self, request):
         breeds = Breed.objects.all()
         serializer = BreedSerializer(breeds, many=True)
@@ -211,12 +253,17 @@ class BreedListView(APIView):
         serializer = BreedSerializer(data=request.data)
         if not serializer.is_valid():
             if is_duplicate(serializer.errors, "name"):
-                raise ConflictError("Breeder with this email already exists")
+                raise ConflictError("Breed with this name already exists")
             raise ValidationError(serializer.errors)
-        serializer.save()
+        breed = serializer.save()
+        logger.info("Breed has been created: breed_id=%s, user_id=%s",
+                    breed.id,
+                    request.user.id)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class BreedDetailView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
+
     def patch(self, request, pk):
         breed = get_object_or_404(Breed, pk=pk)
         serializer = BreedSerializer(breed, data=request.data, partial=True)
@@ -225,6 +272,11 @@ class BreedDetailView(APIView):
                 raise ConflictError("Breed with this name already exists")
             raise ValidationError(serializer.errors)
         serializer.save()
+        logger.info("Breed has been updated: breed_id=%s, user_id=%s, fields=%s",
+                    breed.id,
+                    request.user.id,
+                    sorted(request.data.keys())
+                    )
         return Response(serializer.data)
 
     def delete(self, request, pk):
@@ -233,4 +285,8 @@ class BreedDetailView(APIView):
             breed.delete()
         except ProtectedError:
             raise ConflictError("Cannot delete breed: there are cats attached to this breed")
+        logger.info("Breed has been deleted: breed_id=%s, user_id=%s",
+                    pk,
+                    request.user.id,
+                    )
         return Response(status=status.HTTP_204_NO_CONTENT)
