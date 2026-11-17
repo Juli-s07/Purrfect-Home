@@ -3,6 +3,9 @@ from django.utils import timezone
 from rest_framework import serializers
 from .models import Breed, Breeder, Cat
 
+import logging
+logger = logging.getLogger(__name__)
+
 class BreedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Breed
@@ -22,16 +25,15 @@ class CatQuerySerializer(serializers.Serializer):
     min_price = serializers.IntegerField(required=False, min_value=0)
     max_price = serializers.IntegerField(required=False, min_value=0)
     status = serializers.ChoiceField(choices=["available", "reserved", "sold"], required=False)
-    sort_by = serializers.ChoiceField(choices=["price", "age", "created_at"], default="created_at")
+    sort_by = serializers.ChoiceField(choices=["price", "created_at"], default="created_at")
     order = serializers.ChoiceField(choices=["asc", "desc"], default="desc")
     page = serializers.IntegerField(min_value=1, default=1)
     limit = serializers.IntegerField(min_value=1, max_value=100, default=10)
 
     def validate(self, attrs):
         if "min_price" in attrs and "max_price" in attrs and attrs["min_price"] > attrs["max_price"]:
+            logger.warning("Invalid range of price: min_price=%s, max_price=%s", attrs["min_price"], attrs["max_price"])
             raise serializers.ValidationError("min_price cannot be greater than max_price")
-        if "min_age" in attrs and "max_age" in attrs and attrs["min_age"] > attrs["max_age"]:
-            raise serializers.ValidationError("min_age cannot be greater than max_age")
         return attrs
 
 class CatSerializer(serializers.ModelSerializer):
@@ -49,6 +51,7 @@ class CatSerializer(serializers.ModelSerializer):
 
     def validate_birth_date(self, value):
         if value > timezone.localdate():
+            logging.warning("Birth date can't be in the future: birth_date=%s", value)
             raise serializers.ValidationError("Birth date cannot be in the future")
         return value
 
@@ -58,6 +61,12 @@ class CatShortSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cat
         fields = ["id", "name", "sex", "breed", "price", "status", "photo_url"]
+
+class CatListResponseSerializer(serializers.Serializer):
+    items = CatShortSerializer(many=True)
+    page = serializers.IntegerField()
+    limit = serializers.IntegerField()
+    total = serializers.IntegerField()
 
 class BreederSerializer(serializers.ModelSerializer):
     cats = CatShortSerializer(many=True, read_only=True)
