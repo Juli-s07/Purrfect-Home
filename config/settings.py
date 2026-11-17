@@ -11,23 +11,18 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = config("SECRET_KEY")
+DEBUG = config("DEBUG", default=False, cast=bool)
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="", cast=Csv())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-csz#0g_+u88cb1nzqg9v5c@7!6jmj+(d3b(%12ha1a7vx2!otp"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -67,7 +62,7 @@ REST_FRAMEWORK = {
 }
 
 LOG_DIR = BASE_DIR / "logs"
-
+LOG_DIR.mkdir(exist_ok=True)
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -93,12 +88,12 @@ LOGGING = {
     },
     "root": {
         "handlers": ["console", "file"],
-        "level": os.getenv("LOG_LEVEL", "INFO"),
+        "level":  config("LOG_LEVEL", default="INFO"),
     },
     "loggers": {
         "django": {
             "handlers": ["console", "file"],
-            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
+            "level": config("DJANGO_LOG_LEVEL", default="INFO"),
             "propagate": False,
         },
     },
@@ -111,9 +106,7 @@ SPECTACULAR_SETTINGS = {
     "SERVE_INCLUDE_SCHEMA": False,
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5500",
-]
+CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", default="", cast=Csv())
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
