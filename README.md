@@ -451,3 +451,32 @@ P.S. Виміряне покриття для ресурсу Cats є не дуж
 - OpenAPI-схема: http://127.0.0.1:8000/api/schema/
 
 Щоб отримати OpenAPI схему, треба перейти за другою адресою. Файл автоматично почне завантажуватись.
+
+## Встановлення залежностей
+Встановлення залежностей для запуску проєкту:  
+```bash
+pip install -r requirements.txt
+```
+Встановлення залежностей для розробки й тестування: 
+```bash
+pip install requirements-dev.txt
+```
+
+## Локальне середовище
+До .env занесено такі змінні середовища:  
+- DEBUG
+- ALLOWED_HOSTS
+- CORS_ALLOWED_ORIGINS
+- LOG_LEVEL
+- DJANGO_LOG_LEVEL
+- та секрет SECRET_KEY  
+
+У settings.py ці налаштування беруться прямо з .env (або за дефолтом, якщо змінної  немає)
+
+Іншим доступний лише .env.example з заглушками та дефолтними змінними.  
+.env треба налаштовувати вручну.
+
+Отримати свій SECRET_KEY можна генерацією:  
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
